@@ -165,7 +165,7 @@
 //
 //void RemoveBSN(char str[])
 //{
-//	int len = strlen(str);
+//	int len = strlen(str);			//'\n' 자리에 널문자를 삽입하여 마지막 문자 삭제
 //	str[len - 1] = 0;
 //}
 
@@ -194,20 +194,64 @@
 
 //문자열 이어 붙이기
 
+//int main(void)
+//{
+//	char str1[20] = "First~";
+//	char str2[20] = "Second";
+//
+//	char str3[20] = "Simple num : ";
+//	char str4[20] = "1234567890";
+//
+//	strcat(str1, str2);
+//	puts(str1);
+//
+//	strncat(str3, str4, 6);
+//	puts(str3);
+//
+//	return 0;
+//
+//}
+
+
+//문자열 비교
+
+//int main(void)
+//{
+//	char str1[20];
+//	char str2[20];
+//
+//	printf("문자열 입력 1 : ");
+//	scanf("%s", str1);
+//	printf("문자열 입력 2 : ");
+//	scanf("%s", str2);
+//
+//	if (!strcmp(str1, str2))
+//	{
+//		puts("두 문자열은 완벽히 동일합니다.");
+//	}
+//	else
+//	{
+//		puts("두 문자열은 동일하지 않습니다.");
+//
+//		if (!strncmp(str1, str2, 3))
+//			puts("그러나 앞 세 글자는 동일합니다.");
+//	}
+//	return 0;
+//}
+
+
+//문자열을 숫자로 변환
+
 int main(void)
 {
-	char str1[20] = "First~";
-	char str2[20] = "Second";
+	char str[20];
+	printf("정수 입력 : ");
+	scanf("%s", str);
+	printf("%d \n", atoi(str));
 
-	char str3[20] = "Simple num : ";
-	char str4[20] = "1234567890";
-
-	strcat(str1, str2);
-	puts(str1);
-
-	strncat(str3, str4, 6);
-	puts(str3);
+	printf("실수 입력 : ");
+	scanf("%s", str);
+	printf("%f \n", atof(str));
 
 	return 0;
-
 }
