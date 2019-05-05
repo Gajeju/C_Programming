@@ -317,6 +317,38 @@
 
 //practice3
 
+int getSpace(char str[])
+{
+	for (int i = 0; i < strlen(str); i++)
+	{
+		if (str[i] == ' ')
+			return i;
+	}
+	return -1;
+}
+
+int compName(char str1[], char str2[])
+{
+	int space1 = getSpace(str1);
+	int space2 = getSpace(str2);
+
+	if (space1 != space2)
+		return 0;
+	else
+		return !strncmp(str1, str2, space1);
+}
+
+int compAge(char str1[], char str2[])
+{
+	int age1 = atoi(&str1[getSpace(str1) + 1]);
+	int age2 = atoi(&str2[getSpace(str2) + 1]);
+
+	if (age1 == age2)
+		return 1;
+	else
+		return 0;
+}
+
 int main(void)
 {
 	int str1[20];
@@ -324,9 +356,21 @@ int main(void)
 
 	printf("첫번째 이름과 나이 입력 : ");
 	fgets(str1, sizeof(str1), stdin);
+	str1[strlen(str1) - 1] = 0;
 
 	printf("두번째 이름과 나이 입력 : ");
 	fgets(str2, sizeof(str2), stdin);
+	str2[strlen(str2) - 1] = 0;
+
+	if (compName(str1, str2))
+		puts("이름이 동일합니다.");
+	else
+		puts("이름이 동일하지 않습니다.");
+
+	if (compAge(str1, str2))
+		puts("나이가 동일합니다.");
+	else
+		puts("나이가 동일하지 않습니다.");
 
 	return 0;
 }
