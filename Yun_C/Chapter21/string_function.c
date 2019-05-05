@@ -242,16 +242,91 @@
 
 //문자열을 숫자로 변환
 
+//int main(void)
+//{
+//	char str[20];
+//	printf("정수 입력 : ");
+//	scanf("%s", str);
+//	printf("%d \n", atoi(str));
+//
+//	printf("실수 입력 : ");
+//	scanf("%s", str);
+//	printf("%f \n", atof(str));
+//
+//	return 0;
+//}
+
+
+//practice 1
+
+//int main(void)
+//{
+//	char str[20];
+//	int sum = 0;
+//
+//	printf("문자열 입력 : ");
+//	fgets(str, sizeof(str), stdin);
+//
+//	for (int i = 0; i < strlen(str); i++)
+//	{
+//		if (str[i] >= '0' && str[i] <= '9')
+//		{
+//			sum += (str[i] - 48);
+//		}
+//	}
+//
+//	printf("결과 : %d \n", sum);
+//
+//	return 0;
+//}
+
+
+//practice 2
+
+//void deleteEnter(char str[])
+//{
+//	str[strlen(str) - 1] = 0;
+//}
+//
+//int main(void)
+//{
+//	char str1[20];
+//	char str2[20];
+//	char str3[20];
+//
+//	printf("첫번째 문자열 입력 : ");
+//	fgets(str1, sizeof(str1), stdin);
+//	deleteEnter(str1);
+//
+//	printf("두번째 문자열 입력 : ");
+//	fgets(str2, sizeof(str2), stdin);
+//	deleteEnter(str2);
+//
+//	printf("세번째 문자열 입력 : ");
+//	fgets(str3, sizeof(str3), stdin);
+//	deleteEnter(str3);
+//
+//	strcat(str3, str1);
+//	strcat(str3, str2);
+//
+//	printf("결과 : %s", str3);
+//
+//	return 0;
+//}
+
+
+//practice3
+
 int main(void)
 {
-	char str[20];
-	printf("정수 입력 : ");
-	scanf("%s", str);
-	printf("%d \n", atoi(str));
+	int str1[20];
+	int str2[20];
 
-	printf("실수 입력 : ");
-	scanf("%s", str);
-	printf("%f \n", atof(str));
+	printf("첫번째 이름과 나이 입력 : ");
+	fgets(str1, sizeof(str1), stdin);
+
+	printf("두번째 이름과 나이 입력 : ");
+	fgets(str2, sizeof(str2), stdin);
 
 	return 0;
 }
