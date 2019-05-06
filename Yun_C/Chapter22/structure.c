@@ -4,7 +4,6 @@
 #pragma warning(disable : 4996)
 #pragma warning(disable : 6031)
 #pragma warning(disable : 6001)
---
 //구조체의 생성과 접근
 
 struct point
