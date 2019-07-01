@@ -170,29 +170,85 @@
 
 //practice 2
 
-struct employee
+//struct employee
+//{
+//	char name[20];
+//	char personal[20];
+//	int pay;
+//};
+//
+//int main(void)
+//{
+//	struct employee arr[3];
+//	
+//	for (int i = 0; i < 3; i++)
+//	{
+//		printf("이름 입력 : ");
+//		scanf("%s", arr[i].name);
+//		printf("주민번호 입력 : ");
+//		scanf("%s", arr[i].personal);
+//		printf("급여정보 입력 : ");
+//		scanf("%d", &arr[i].pay);
+//	}
+//
+//	for (int i = 0; i < 3; i++)
+//		printf("이름 : %s \n주민번호 : %s \n급여정보 : %d \n", arr[i].name, arr[i].personal, arr[i].pay);
+//
+//	return 0;
+//}
+
+
+//typedef
+
+//typedef int INT;
+//typedef int* PTR_INT;
+//
+//typedef unsigned int UINT;
+//typedef unsigned int* PTR_UINT;
+//
+//typedef unsigned char UCHAR;
+//typedef unsigned char * PTR_UCHAR;
+//
+//int main(void)
+//{	
+//	INT num1 = 120;
+//	PTR_INT pnum1 = &num1;
+//
+//	UINT num2 = 190;
+//	PTR_UINT pnum2 = &num2;
+//
+//	UCHAR ch = 'Z';
+//	PTR_UCHAR pch = &ch;
+//
+//	printf("%d %u %c \n", *pnum1, *pnum2, *pch);
+//
+//	return 0;
+//}
+
+
+//구조체의 일반적인 선언
+
+struct point
+{
+	int xpos;
+	int ypos;
+};
+
+typedef struct point Point;
+
+typedef struct person
 {
 	char name[20];
-	char personal[20];
-	int pay;
-};
+	char phoneNum[20];
+	int age;
+} Person;
 
 int main(void)
 {
-	struct employee arr[3];
-	
-	for (int i = 0; i < 3; i++)
-	{
-		printf("이름 입력 : ");
-		scanf("%s", arr[i].name);
-		printf("주민번호 입력 : ");
-		scanf("%s", arr[i].personal);
-		printf("급여정보 입력 : ");
-		scanf("%d", &arr[i].pay);
-	}
-
-	for (int i = 0; i < 3; i++)
-		printf("이름 : %s \n주민번호 : %s \n급여정보 : %d \n", arr[i].name, arr[i].personal, arr[i].pay);
+	Point pos = { 10, 20 };
+	Person man = { "이승기", "010-1212-0001", 21 };
+	printf("%d %d \n", pos.xpos, pos.ypos);
+	printf("%s %s %d \n", man.name, man.phoneNum, man.age);
 
 	return 0;
 }
