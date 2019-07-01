@@ -338,27 +338,55 @@
 
 //구조체의 일반적인 선언
 
-struct point
+//struct point
+//{
+//	int xpos;
+//	int ypos;
+//};
+//
+//typedef struct point Point;
+//
+//typedef struct person
+//{
+//	char name[20];
+//	char phoneNum[20];
+//	int age;
+//} Person;
+//
+//int main(void)
+//{
+//	Point pos = { 10, 20 };
+//	Person man = { "이승기", "010-1212-0001", 21 };
+//	printf("%d %d \n", pos.xpos, pos.ypos);
+//	printf("%s %s %d \n", man.name, man.phoneNum, man.age);
+//
+//	return 0;
+//}
+
+
+typedef struct point
 {
 	int xpos;
 	int ypos;
-};
+} Point;
 
-typedef struct point Point;
-
-typedef struct person
+void ShowPosition(Point pos)
 {
-	char name[20];
-	char phoneNum[20];
-	int age;
-} Person;
+	printf("[%d %d] \n", pos.xpos, pos.ypos);
+}
+
+Point GetCurrentPosition(void)
+{
+	Point cen;
+	printf("Input current pos : ");
+	scanf("%d %d", &cen.xpos, &cen.ypos);
+	return cen;
+}
 
 int main(void)
 {
-	Point pos = { 10, 20 };
-	Person man = { "이승기", "010-1212-0001", 21 };
-	printf("%d %d \n", pos.xpos, pos.ypos);
-	printf("%s %s %d \n", man.name, man.phoneNum, man.age);
+	Point curPos = GetCurrentPosition();
+	ShowPosition(curPos);
 
 	return 0;
 }
