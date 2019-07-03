@@ -364,29 +364,188 @@
 //}
 
 
+//구조체변수를 함수의 리턴값과 인자로 사용
+
+//typedef struct point
+//{
+//	int xpos;
+//	int ypos;
+//} Point;
+//
+//void ShowPosition(Point pos)
+//{
+//	printf("[%d %d] \n", pos.xpos, pos.ypos);
+//}
+//
+//Point GetCurrentPosition(void)
+//{
+//	Point cen;
+//	printf("Input current pos : ");
+//	scanf("%d %d", &cen.xpos, &cen.ypos);
+//	return cen;
+//}
+//
+//int main(void)
+//{
+//	Point curPos = GetCurrentPosition();
+//	ShowPosition(curPos);
+//
+//	return 0;
+//}
+
+
+//배열 사용
+
+//typedef struct person
+//{
+//	char name[20];
+//	char phonNum[20];
+//	int age;
+//} Person;
+//
+//void ShowPersonInfo(Person man)
+//{
+//	printf("name : %s \n", man.name);
+//	printf("phone : %s \n", man.phonNum);
+//	printf("age : %d \n", man.age);
+//}
+//
+//Person ReadPersonInfo(void)
+//{
+//	Person man;
+//	printf("name? : "); scanf("%s", man.name);
+//	printf("phone? : "); scanf("%s", man.phonNum);
+//	printf("age? : "); scanf("%d", &man.age);
+//
+//	return man;
+//}
+//
+//int main(void)
+//{
+//	Person man = ReadPersonInfo();
+//	ShowPersonInfo(man);
+//
+//	return 0;
+//}
+
+
+//구조체 참조호출
+
+//typedef struct point
+//{
+//	int xpos;
+//	int ypos;
+//} Point;
+//
+//void OrgSymTrans(Point* p)
+//{
+//	p->xpos = (p->xpos) * (-1);
+//	p->ypos = (p->ypos) * (-1);
+//}
+//
+//void ShowPosition(Point pos)
+//{
+//	printf("[%d %d] \n", pos.xpos, pos.ypos);
+//}
+//
+//int main(void)
+//{
+//	Point pos = { 7, -5 };
+//	OrgSymTrans(&pos);
+//	ShowPosition(pos);
+//	OrgSymTrans(&pos);
+//	ShowPosition(pos);
+//
+//	return 0;
+//}
+
+
+//구조체 변수의 연산
+
+//typedef struct point
+//{
+//	int xpos;
+//	int ypos;
+//} Point;
+//
+//int main(void)
+//{
+//	Point pos1 = { 1, 2 };
+//	Point pos2;
+//	pos2 = pos1;
+//	
+//	printf("크기 : %d \n", sizeof(pos1));
+//	printf("[%d %d] \n", pos1.xpos, pos1.ypos);
+//	printf("크기 : %d \n", sizeof(pos2));
+//	printf("[%d %d] \n", pos2.xpos, pos2.ypos);
+//
+//	return 0;
+//}
+
+
+//구조체연산을 하는 함수 정의
+
+//typedef struct point
+//{
+//	int xpos;
+//	int ypos;
+//} Point;
+//
+//Point AddPoint(Point pos1, Point pos2)
+//{
+//	Point pos = { pos1.xpos + pos2.xpos, pos1.ypos + pos2.ypos };
+//	return pos;
+//}
+//
+//Point MinPoint(Point pos1, Point pos2)
+//{
+//	Point pos = { pos1.xpos - pos2.xpos, pos1.ypos - pos2.ypos };
+//	return pos;
+//}
+//
+//int main(void)
+//{
+//	Point pos1 = { 5, 6 };
+//	Point pos2 = { 2, 9 };
+//	Point result;
+//
+//	result = AddPoint(pos1, pos2);
+//	printf("[%d %d] \n", result.xpos, result.ypos);
+//	result = MinPoint(pos1, pos2);
+//	printf("[%d %d] \n", result.xpos, result.ypos);
+//
+//	return 0;
+//}
+
+
+//practice
+
 typedef struct point
 {
 	int xpos;
 	int ypos;
 } Point;
 
-void ShowPosition(Point pos)
+void Swap(Point * p1, Point * p2)
 {
-	printf("[%d %d] \n", pos.xpos, pos.ypos);
-}
+	Point temp;
 
-Point GetCurrentPosition(void)
-{
-	Point cen;
-	printf("Input current pos : ");
-	scanf("%d %d", &cen.xpos, &cen.ypos);
-	return cen;
+	temp = *p1;
+	*p1 = *p2;
+	*p2 = temp;
 }
 
 int main(void)
 {
-	Point curPos = GetCurrentPosition();
-	ShowPosition(curPos);
+	Point pos1 = { 2, 4 };
+	Point pos2 = { 5, 7 };
+
+	Swap(&pos1, &pos2);
+
+	printf("[%d %d] \n", pos1.xpos, pos1.ypos);
+	printf("[%d %d] \n", pos2.xpos, pos2.ypos);
 
 	return 0;
 }
+
+
