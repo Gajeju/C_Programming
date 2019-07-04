@@ -551,41 +551,73 @@
 
 //구조체를 사용하는 이유
 
-typedef struct studnet
-{
-	char name[20];
-	char stdnum[20];
-	char school[20];
-	char major[20];
-	int year;
-} Student;
+//typedef struct studnet
+//{
+//	char name[20];
+//	char stdnum[20];
+//	char school[20];
+//	char major[20];
+//	int year;
+//} Student;
+//
+//void ShowStudentInfo(Student* sptr)
+//{
+//	printf("학생 이름 : %s \n", sptr->name);
+//	printf("학생 고유번호 : %s \n", sptr->stdnum);
+//	printf("학교 이름 : %s \n", sptr->school);
+//	printf("선택 정공 : %s \n", sptr->major);
+//	printf("학년 : %d \n", sptr->year);
+//}
+//
+//int main(void)
+//{
+//	Student arr[7];
+//	
+//	for (int i = 0; i < 7; i++)
+//	{
+//		printf("이름 : "); scanf("%s", arr[i].name);
+//		printf("번호 : "); scanf("%s", arr[i].stdnum);
+//		printf("학교 : "); scanf("%s", arr[i].school);
+//		printf("전공 : "); scanf("%s", arr[i].major);
+//		printf("학년 : "); scanf("%d", &arr[i].year);
+//	}
+//
+//	for (int i = 0; i < 7; i++)
+//	{
+//		ShowStudentInfo(&arr[i]);
+//	}
+//
+//	return 0;
+//}
 
-void ShowStudentInfo(Student* sptr)
-{
-	printf("학생 이름 : %s \n", sptr->name);
-	printf("학생 고유번호 : %s \n", sptr->stdnum);
-	printf("학교 이름 : %s \n", sptr->school);
-	printf("선택 정공 : %s \n", sptr->major);
-	printf("학년 : %d \n", sptr->year);
-}
 
-int main(void)
-{
-	Student arr[7];
-	
-	for (int i = 0; i < 7; i++)
-	{
-		printf("이름 : "); scanf("%s", arr[i].name);
-		printf("번호 : "); scanf("%s", arr[i].stdnum);
-		printf("학교 : "); scanf("%s", arr[i].school);
-		printf("전공 : "); scanf("%s", arr[i].major);
-		printf("학년 : "); scanf("%d", &arr[i].year);
-	}
+//중첩된 구조체
 
-	for (int i = 0; i < 7; i++)
-	{
-		ShowStudentInfo(&arr[i]);
-	}
+//typedef struct point
+//{
+//	int xpos;
+//	int ypos;
+//} Point;
+//
+//typedef struct circle
+//{
+//	Point cen;
+//	double rad;
+//} Circle;
+//
+//void ShowCircleInfo(Circle* cptr)
+//{
+//	printf("[%d %d] \n", (cptr->cen).xpos, (cptr->cen).ypos);
+//	printf("radius : %g \n\n", cptr->rad);
+//}
+//
+//int main(void)
+//{
+//	Circle c1 = { {1, 2}, 3.5 };
+//	Circle c2 = { 2, 4, 3.9 };
+//	ShowCircleInfo(&c1);
+//	ShowCircleInfo(&c2);
+//
+//	return 0;
+//}
 
-	return 0;
-}
