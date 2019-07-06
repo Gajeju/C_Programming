@@ -685,7 +685,7 @@ int main(void)
 	UBox ubx;
 	printf("%p %p %p \n", &sbx.men1, &sbx.men2, &sbx.men3);
 	printf("%p %p %p \n", &ubx.men1, &ubx.men2, &ubx.men3);
-	printf("%d %d \n", sizeof(SBox), sizeof(UBox));
+	printf("%zd %zd \n", sizeof(SBox), sizeof(UBox));
 
 	return 0;
 }
