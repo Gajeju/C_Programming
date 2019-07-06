@@ -665,28 +665,119 @@
 
 //공동체
 
-typedef struct sbos
-{
-	int men1;
-	int men2;
-	double men3;
-} SBox;
+//typedef struct sbos
+//{
+//	int men1;
+//	int men2;
+//	double men3;
+//} SBox;
+//
+//typedef union ubox
+//{
+//	int men1;
+//	int men2;
+//	double men3;
+//} UBox;
+//
+//int main(void)
+//{
+//	SBox sbx;
+//	UBox ubx;
+//	printf("%p %p %p \n", &sbx.men1, &sbx.men2, &sbx.men3);
+//	printf("%p %p %p \n", &ubx.men1, &ubx.men2, &ubx.men3);
+//	printf("%zd %zd \n", sizeof(SBox), sizeof(UBox));
+//
+//	return 0;
+//}
 
-typedef union ubox
+
+//공동체 특징
+
+//typedef union ubox
+//{
+//	int men1;
+//	int men2;
+//	double men3;
+//} UBox;
+//
+//int main(void)
+//{
+//	UBox ubx;
+//	ubx.men1 = 20;
+//	printf("%d \n", ubx.men2);
+//
+//	ubx.men3 = 7.15;
+//	printf("%d \n", ubx.men1);
+//	printf("%d \n", ubx.men2);
+//	printf("%f \n", ubx.men3);
+//
+//	return 0;
+//}
+
+
+//공동체를 이용하여 메모리 접근
+
+//typedef struct dbshor
+//{
+//	unsigned short upper;
+//	unsigned short lower;
+//} DBShort;
+//
+//typedef union rdbuf
+//{
+//	int iBuf;
+//	char bBuf[4];
+//	DBShort sBuf;
+//} RDBuf;
+//
+//int main(void)
+//{
+//	RDBuf buf;
+//	printf("정수 입력 : ");
+//	scanf("%d", &(buf.iBuf));
+//
+//	printf("상위 2비트 : %u \n", buf.sBuf.upper);
+//	printf("하위 2비트 : %u \n", buf.sBuf.lower);
+//	printf("상위 1바이트 아스키 코드  : %u \n", buf.sBuf.upper);
+//	printf("상위 2비트 : %u \n", buf.sBuf.upper);
+//
+//	return 0;
+//}
+
+
+//열거형
+
+typedef enum syllable
 {
-	int men1;
-	int men2;
-	double men3;
-} UBox;
+	Do = 1, Re, Me, Fa, So, La, Ti
+} Syllable;
+
+void Sound(Syllable sy)
+{
+	switch (sy)
+	{
+	case Do:
+		puts("도"); return;
+	case Re :
+		puts("레"); return;
+	case Me:
+		puts("미"); return;
+	case Fa:
+		puts("파"); return;
+	case So:
+		puts("솔"); return;
+	case La:
+		puts("라"); return;
+	case Ti:
+		puts("시"); return;
+	}
+}
 
 int main(void)
 {
-	SBox sbx;
-	UBox ubx;
-	printf("%p %p %p \n", &sbx.men1, &sbx.men2, &sbx.men3);
-	printf("%p %p %p \n", &ubx.men1, &ubx.men2, &ubx.men3);
-	printf("%zd %zd \n", sizeof(SBox), sizeof(UBox));
+	Syllable tone;
+	for (tone = Do; tone <= Ti; tone += 1)
+		Sound(tone);
 
 	return 0;
 }
-
