@@ -139,7 +139,7 @@ int main(void)
 	}
 
 	while (fgets(str, sizeof(str), src) != NULL)
-		fputs("str, des");
+		fputs(str, des);
 	if (feof(src) != 0)
 		puts("파일복사 완료");
 	else
