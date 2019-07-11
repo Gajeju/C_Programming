@@ -126,11 +126,40 @@
 
 //문자열 단위 파일 복사
 
+//int main(void)
+//{
+//	FILE* src = fopen("src.txt", "rt");
+//	FILE* des = fopen("des.txt", "wt");
+//	char str[20];
+//
+//	if (src == NULL || des == NULL)
+//	{
+//		puts("파일오픈 실패");
+//		return -1;
+//	}
+//
+//	while (fgets(str, sizeof(str), src) != NULL)
+//		fputs(str, des);
+//	if (feof(src) != 0)
+//		puts("파일복사 완료");
+//	else
+//		puts("파일복사 실패");
+//
+//	fclose(src);
+//	fclose(des);
+//
+//	return 0;
+//}
+
+
+//바이너리 입출력
+
 int main(void)
 {
-	FILE* src = fopen("src.txt", "rt");
-	FILE* des = fopen("des.txt", "wt");
-	char str[20];
+	FILE* src = fopen("src.bin", "rb");
+	FILE* des = fopen("dst.bin", "wb");
+	char buf[20];
+	int readCnt;
 
 	if (src == NULL || des == NULL)
 	{
@@ -138,13 +167,24 @@ int main(void)
 		return -1;
 	}
 
-	while (fgets(str, sizeof(str), src) != NULL)
-		fputs(str, des);
-	if (feof(src) != 0)
-		puts("파일복사 완료");
-	else
-		puts("파일복사 실패");
+	while (1)
+	{
+		readCnt = fread((void*)buf, 1, sizeof(buf), des);
 
+		if (readCnt < sizeof(buf))
+		{
+			if (feof(src) != 0)
+			{
+				fwrite((void*)buf, 1, readCnt, des);
+				puts("파일복사 완료");
+				break;
+			}
+			else
+				puts("파일복사 실패");
+			break;
+		}
+		fwrite((void*)buf, 1, sizeof(buf), des);
+	}
 	fclose(src);
 	fclose(des);
 
