@@ -154,40 +154,84 @@
 
 //바이너리 입출력
 
+//int main(void)
+//{
+//	FILE* src = fopen("src.bin", "rb");
+//	FILE* des = fopen("dst.bin", "wb");
+//	char buf[20];
+//	int readCnt;
+//
+//	if (src == NULL || des == NULL)
+//	{
+//		puts("파일오픈 실패");
+//		return -1;
+//	}
+//
+//	while (1)
+//	{
+//		readCnt = fread((void*)buf, 1, sizeof(buf), des);
+//
+//		if (readCnt < sizeof(buf))
+//		{
+//			if (feof(src) != 0)
+//			{
+//				fwrite((void*)buf, 1, readCnt, des);
+//				puts("파일복사 완료");
+//				break;
+//			}
+//			else
+//				puts("파일복사 실패");
+//			break;
+//		}
+//		fwrite((void*)buf, 1, sizeof(buf), des);
+//	}
+//	fclose(src);
+//	fclose(des);
+//
+//	return 0;
+//}
+
+
+//practice 1
+
+//int main(void)
+//{
+//	FILE* mystory = fopen("mystory.txt", "wt");
+//	
+//	fputs("#이름 : 윤성우 \n", mystory);
+//	fputs("#주민번호 : 900208-1012589 \n", mystory);
+//	fputs("#번화번호 : 010-1111-2222 \n", mystory);
+//	
+//	fclose(mystory);
+//
+//	return 0;
+//}
+
+
+//practice 2
+
+//int main(void)
+//{
+//	FILE* mystory = fopen("mystory.txt", "at");
+//
+//	fputs("#즐겨먹는 음식 : 짬뽕, 탕수육 \n", mystory);
+//	fputs("#취미 : 축구 \n", mystory);
+//	fclose(mystory);
+//
+//	return 0;
+//}
+
+
+//practice 3
+
 int main(void)
 {
-	FILE* src = fopen("src.bin", "rb");
-	FILE* des = fopen("dst.bin", "wb");
-	char buf[20];
-	int readCnt;
+	FILE* fp = fopen("mystory.txt", "rt");
+	char str[40];
 
-	if (src == NULL || des == NULL)
-	{
-		puts("파일오픈 실패");
-		return -1;
-	}
-
-	while (1)
-	{
-		readCnt = fread((void*)buf, 1, sizeof(buf), des);
-
-		if (readCnt < sizeof(buf))
-		{
-			if (feof(src) != 0)
-			{
-				fwrite((void*)buf, 1, readCnt, des);
-				puts("파일복사 완료");
-				break;
-			}
-			else
-				puts("파일복사 실패");
-			break;
-		}
-		fwrite((void*)buf, 1, sizeof(buf), des);
-	}
-	fclose(src);
-	fclose(des);
+	while (fgets(str, sizeof(str), fp) != NULL)
+		printf(str);
+	fclose(fp);
 
 	return 0;
 }
-
