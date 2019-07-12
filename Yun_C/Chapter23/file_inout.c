@@ -224,13 +224,61 @@
 
 //practice 3
 
+//int main(void)
+//{
+//	FILE* fp = fopen("mystory.txt", "rt");
+//	char str[40];
+//
+//	while (fgets(str, sizeof(str), fp) != NULL)
+//		printf(str);
+//	fclose(fp);
+//
+//	return 0;
+//}
+
+
+//fprintf 사용법
+
+//int main(void)
+//{
+//	char name[10];
+//	char sex;
+//	int age;
+//
+//	FILE* fp = fopen("friend.txt", "wt");
+//	int i;
+//
+//	for (i = 0; i < 3; i++);
+//	{
+//		printf("이름 성별 나이 입력 : ");
+//		scanf("%s %c %d", name, &sex, &age);
+//		getchar();								//버퍼에 남아있는 \n 소멸을 위해서
+//		fprintf(fp, "%s %c %d", name, sex, age);
+//	}
+//	fclose(fp);
+//
+//	return 0;
+//}
+
+
+//fscanf 함수
+
 int main(void)
 {
-	FILE* fp = fopen("mystory.txt", "rt");
-	char str[40];
+	char name[10];
+	char sex;
+	int age;
 
-	while (fgets(str, sizeof(str), fp) != NULL)
-		printf(str);
+	FILE* fp = fopen("friend.txt", "rt");
+	int ret;
+
+	while (1)
+	{
+		ret = fscanf(fp, "%s %c %d", name, &sex, &age);
+		if (ret == EOF)
+			break;
+		printf("%s %c %d \n", name, sex, age);
+	}
 	fclose(fp);
 
 	return 0;
