@@ -263,23 +263,146 @@
 
 //fscanf 함수
 
+//int main(void)
+//{
+//	char name[10];
+//	char sex;
+//	int age;
+//
+//	FILE* fp = fopen("friend.txt", "rt");
+//	int ret;
+//
+//	while (1)
+//	{
+//		ret = fscanf(fp, "%s %c %d", name, &sex, &age);
+//		if (ret == EOF)
+//			break;
+//		printf("%s %c %d \n", name, sex, age);
+//	}
+//	fclose(fp);
+//
+//	return 0;
+//}
+
+
+//구조체 변수의 입출력
+
+//typedef struct fren
+//{
+//	char name[10];
+//	char sex;
+//	int age;
+//} Friend;
+//
+//int main(void)
+//{
+//	FILE* fp;
+//	Friend myfren1;
+//	Friend myfren2;
+//
+//	//파일 write
+//	fp = fopen("friend.bin", "wb");
+//	printf("이름, 성별, 나이 순 입력 : ");
+//	scanf("%s %c %d", myfren1.name, &(myfren1.sex), &(myfren1.age));
+//	fwrite((void*)&myfren1, sizeof(myfren1), 1, fp);
+//	fclose(fp);
+//	
+//	//파일 read
+//	fp = fopen("friend.bin", "rb");
+//	fread((void*)& myfren2, sizeof(myfren2), 1, fp);
+//	printf("%s %c %d \n", myfren2.name, myfren2.sex, myfren2.age);
+//	fclose(fp);
+//
+//	return 0;
+//}
+
+
+//파일 지시자 이동
+
+//int main(void)
+//{
+//	//파일 생성
+//	FILE* fp = fopen("text.txt", "wt");
+//	fputs("123456789", fp);
+//	fclose(fp);
+//
+//	//파일 개방
+//	fp = fopen("text.txt", "rt");
+//
+//	//SEEK_END
+//	fseek(fp, -2, SEEK_END);
+//	putchar(fgetc(fp));
+//
+//	//SEEK_SET
+//	fseek(fp, 2, SEEK_SET);
+//	putchar(fgetc(fp));
+//
+//	//SEEK_CUR
+//	fseek(fp, 2, SEEK_CUR);
+//	putchar(fgetc(fp));
+//	
+//	return 0;
+//}
+
+
+//현재 파일 위치 지시자 찾기
+
+//int main(void)
+//{
+//	long fpos;
+//	
+//	//파일 생성
+//	FILE* fp = fopen("text.txt", "wt");
+//	fputs("1234-", fp);
+//	fclose(fp);
+//
+//	//파일 개방
+//	fp = fopen("text.txt", "rt");
+//
+//	for (int i = 0; i < 4; i++)
+//	{
+//		putchar(fgetc(fp));
+//		fpos = ftell(fp);
+//		fseek(fp, -1, SEEK_END);
+//		putchar(fgetc(fp));
+//		fseek(fp, fpos, SEEK_SET);
+//
+//	}
+//
+//	return 0;
+//}
+
+
+//practice 2
+
+long GetFileSize(FILE* fp);
+
 int main(void)
 {
-	char name[10];
-	char sex;
-	int age;
-
-	FILE* fp = fopen("friend.txt", "rt");
-	int ret;
-
-	while (1)
-	{
-		ret = fscanf(fp, "%s %c %d", name, &sex, &age);
-		if (ret == EOF)
-			break;
-		printf("%s %c %d \n", name, sex, age);
-	}
-	fclose(fp);
+	char str[100];
+	FILE* fp = fopen("ABC.txt", "rt");
+	fgets(str, 100, fp);
+	fputs(str, stdout);
+	printf("파일의 크기 : %ld \n", GetFileSize(fp));
+	fgets(str, 100, fp);
+	fputs(str, stdout);
+	printf("파일의 크기 : %ld \n", GetFileSize(fp));
+	fgets(str, 100, fp);
+	fputs(str, stdout);
+	printf("파일의 크기 : %ld \n", GetFileSize(fp));
 
 	return 0;
+}
+
+long GetFileSize(FILE* fp)
+{
+	long fpos;
+	long fsize;
+	fpos = ftell(fp);
+
+	fseek(fp, 0, SEEK_END);
+	fsize = ftell(fp);
+	fseek(fp, fpos, SEEK_SET);
+
+	return fsize;
 }
