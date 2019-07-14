@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="structure2.c">
+    <ClCompile Include="file_inout.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

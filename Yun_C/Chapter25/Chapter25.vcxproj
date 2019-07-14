@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{63174EEF-28EC-4644-AE20-1A12684AA9C8}</ProjectGuid>
-    <RootNamespace>Chapter23</RootNamespace>
+    <ProjectGuid>{101026E7-FB22-4119-8054-A60D14027E74}</ProjectGuid>
+    <RootNamespace>Chapter25</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,7 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="structure2.c" />
+    <ClCompile Include="dynamic.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
