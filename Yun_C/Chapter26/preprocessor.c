@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#pragma warning (disalbe : 4996)
+#pragma warning (disable : 4996)
 #pragma warning (disable : 6001)
 #pragma warning (disable : 6031)
 
@@ -59,12 +59,95 @@
 
 //매크로 함수의 단점
 
-#define DIFF_ABS(X, Y) ((X)>(Y) ? (X)-(Y) : (Y)-(X))
+//#define DIFF_ABS(X, Y) ((X)>(Y) ? (X)-(Y) : (Y)-(X))
+//
+//int main(void)
+//{
+//	printf("두 값의 차 : %d \n", DIFF_ABS(8, 7));
+//	printf("두 값의 차 : %g \n", DIFF_ABS(1.8, -1.4));
+//
+//	return 0;
+//}
 
-int main(void)
-{
-	printf("두 값의 차 : %d \n", DIFF_ABS(8, 7));
-	printf("두 값의 차 : %g \n", DIFF_ABS(1.8, -1.4));
 
-	return 0;
-}
+//조건부 실행
+
+//#define ADD 1
+//#define MIN 0
+//
+//int main(void)
+//{
+//	int num1, num2;
+//	printf("두 개의 정수 입력 : ");
+//	scanf("%d %d \n", &num1, &num2);
+//
+//#if ADD
+//	printf("%d + %d = %d \n", num1, num2, num1 + num2);
+//#endif
+//
+//#if MIN
+//	printf("%d - %d = %d \n", num1, num2, num1 - num2);
+//#endif
+//
+//	return 0;
+//}
+
+
+//ifdef
+
+////#define ADD 1
+//#define MIN 0
+//
+//int main(void)
+//{
+//	int num1, num2;
+//	printf("두 개의 정수 입력 : ");
+//	scanf("%d %d \n", &num1, &num2);
+//
+//#ifdef ADD
+//	printf("%d + %d = %d \n", num1, num2, num1 + num2);
+//#endif
+//
+//#ifdef MIN
+//	printf("%d - %d = %d \n", num1, num2, num1 - num2);
+//#endif
+//
+//	return 0;
+//}
+
+
+//#else
+
+//#define	HIT_NUM 5
+//
+//int main(void)
+//{
+//#if HIT_NUM == 5
+//	puts("매크로 상수 HIT_NUM은 현재 5입니다");.
+//#else
+//	puts("매크로 상수 HIT_NUM은 현재 5가 아닙니다");
+//#endif
+//
+//	return 0;
+//}
+
+
+//#elif
+
+//#define HIT_NUM 7
+//
+//int main(void)
+//{
+//#if HIT_NUM == 5
+//	puts("매크로 상수 HIT_NUM은 현재 5입니다");
+//#elif HIT_NUM == 6
+//	puts("매크로 상수 HIT_NUM은 현재 6입니다");
+//#elif HIT_NUM == 7
+//	puts("매크로 상수 HIT_NUM은 현재 7입니다");
+//#else
+//	puts("매크로 상수 HIT_NUM은 현재 5, 6, 7은 확실히 아닙니다");
+//#endif
+//
+//	return 0;
+//}
+
