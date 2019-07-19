@@ -152,3 +152,78 @@
 //}
 
 
+// 문자열 치환
+
+//#define STRING_JOB(A, B) #A "의 직업은 " #B "입니다."
+//
+//int main(void)
+//{
+//	printf("%s \n", STRING_JOB(이동춘, 나무꾼));
+//	printf("%s \n", STRING_JOB(한상순, 사냥꾼));
+//
+//	return 0;
+//}
+
+
+//매크로 붙이기
+
+////#define STNUM(Y, S, P) YSP
+////#define STNUM(Y, S, P) Y S P
+////#define STNUM(Y, S, P) ((Y)*100000 + (S)*1000 + (P))
+//#define STNUM(Y, S, P) Y ## S # P
+//
+//int main(void)
+//{
+//	printf("학번 : %d \n", STNUM(10, 65, 175));
+//	printf("학번 : %d \n", STNUM(15, 10, 223));
+//
+//	return 0;
+//}
+
+
+//practice 1
+
+//#define ADD(A, B, C) A + B + C
+//#define MULTI(A, B, C) A * B * C
+//
+//int main(void)
+//{
+//	printf("%d \n", ADD(2, 3, 4));
+//	printf("%d \n", MULTI(2, 3, 4));
+//
+//	return 0;
+//}
+
+
+//practice 2
+
+//#define PI 3.14
+//#define AREA(R) ((R) * (R) * (PI))
+//
+//int main(void)
+//{
+//	double rad;
+//
+//	printf("반지름 : ");
+//	scanf("%lf", &rad);
+//	
+//	printf("원의 넓이 : %f \n",AREA(rad));
+//
+//	return 0;
+//}
+
+
+//practice 3
+
+#define MAX(A, B) ( (A) > (B) ? (A) : (B) )
+
+int main(void)
+{
+	int a, b;
+	printf("두 수 입력 : ");
+	scanf("%d %d", &a, &b);
+
+	printf("큰 수는 : %d \n", MAX(a, b));
+
+	return 0;
+}
