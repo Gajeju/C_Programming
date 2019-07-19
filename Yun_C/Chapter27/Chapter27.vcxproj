@@ -123,13 +123,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="areaArith.c" />
+    <ClCompile Include="baseArith.c" />
     <ClCompile Include="divide.c" />
     <ClCompile Include="func.c" />
+    <ClCompile Include="intdiv.c" />
+    <ClCompile Include="intdiv2.c" />
+    <ClCompile Include="intdiv3.c" />
+    <ClCompile Include="intdiv4.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="num.c" />
+    <ClCompile Include="roundArith.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="areaArith.h" />
     <ClInclude Include="basicArith.h" />
+    <ClInclude Include="intdiv.h" />
+    <ClInclude Include="intdiv3.h" />
+    <ClInclude Include="intidv4.h" />
+    <ClInclude Include="roundArith.h" />
+    <ClInclude Include="stdiv2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

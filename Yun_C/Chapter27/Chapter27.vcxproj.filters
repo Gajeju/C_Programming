@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\BasicArith">
       <UniqueIdentifier>{9be991f6-3cbc-48a2-af61-573ec0ec1a75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Struct">
+      <UniqueIdentifier>{5b567bb6-3739-4923-90f5-be87261298ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="divide.c">
@@ -27,16 +30,55 @@
     <ClCompile Include="func.c">
       <Filter>소스 파일\FileDivide</Filter>
     </ClCompile>
-    <ClCompile Include="main.c">
-      <Filter>소스 파일\FileDivide</Filter>
-    </ClCompile>
     <ClCompile Include="num.c">
       <Filter>소스 파일\FileDivide</Filter>
+    </ClCompile>
+    <ClCompile Include="baseArith.c">
+      <Filter>소스 파일\BasicArith</Filter>
+    </ClCompile>
+    <ClCompile Include="areaArith.c">
+      <Filter>소스 파일\BasicArith</Filter>
+    </ClCompile>
+    <ClCompile Include="roundArith.c">
+      <Filter>소스 파일\BasicArith</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="intdiv.c">
+      <Filter>소스 파일\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="intdiv2.c">
+      <Filter>소스 파일\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="intdiv3.c">
+      <Filter>소스 파일\Struct</Filter>
+    </ClCompile>
+    <ClCompile Include="intdiv4.c">
+      <Filter>소스 파일\Struct</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basicArith.h">
       <Filter>소스 파일\BasicArith</Filter>
+    </ClInclude>
+    <ClInclude Include="areaArith.h">
+      <Filter>소스 파일\BasicArith</Filter>
+    </ClInclude>
+    <ClInclude Include="roundArith.h">
+      <Filter>소스 파일\BasicArith</Filter>
+    </ClInclude>
+    <ClInclude Include="intdiv.h">
+      <Filter>소스 파일\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="intdiv3.h">
+      <Filter>소스 파일\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="stdiv2.h">
+      <Filter>소스 파일\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="intidv4.h">
+      <Filter>소스 파일\Struct</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

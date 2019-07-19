@@ -5,4 +5,4 @@
 #pragma warning (disalbe : 6001)
 #pragma warning (disable : 6031)
 
-//int num = 0;
+int num = 0;
