@@ -157,3 +157,6 @@ int main(void)
 
 	return 0;
 }
+
+//파일 입출력 예제
+
